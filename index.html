@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Information about the private Suwasetha EMR Backup utility and its Google Drive integration.">
+  <meta name="theme-color" content="#f7fafb">
+  <title>Suwasetha EMR Backup | Secure Clinic Backups</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="/" class="brand" aria-label="Suwasetha EMR Backup home"><span class="brand-mark">+</span> Suwasetha <span class="brand-light">EMR Backup</span></a>
+      <nav aria-label="Main navigation"><a class="current" href="/">Overview</a><a href="/privacy.html">Privacy policy</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero wrap">
+      <span class="eyebrow">Private clinic backup utility</span>
+      <h1>Secure backups for<br><span>Suwasetha EMR</span></h1>
+      <p class="lead">Suwasetha EMR Backup is an owner-operated utility being configured to save encrypted database backups from Suwasetha Medical Centre's clinical system into a private Google Drive folder.</p>
+      <div class="actions"><a class="primary" href="/privacy.html">Read our privacy policy <span aria-hidden="true">→</span></a></div>
+      <p class="notice">This information website is public. It does not host patient records, let patients sign in, or provide medical consultations. The automated backup service is being prepared and is not represented here as already active.</p>
+    </section>
+    <section class="wrap section" aria-labelledby="how-it-works">
+      <div class="section-label">Purpose and process</div>
+      <h2 id="how-it-works">How the backup utility works</h2>
+      <div class="features">
+        <article class="feature"><span class="feature-num">01</span><h3>Create a consistent database export</h3><p>A dedicated cloud backup job exports a PostgreSQL snapshot of the clinic database for disaster recovery.</p></article>
+        <article class="feature"><span class="feature-num">02</span><h3>Encrypt before upload</h3><p>The export is protected using AES-256-GCM encryption before transfer to Google Drive. The decryption key is held separately.</p></article>
+        <article class="feature"><span class="feature-num">03</span><h3>Store privately on Google Drive</h3><p>The utility uploads encrypted archives to a private folder authorized by the Google account owner, for use in a controlled recovery process.</p></article>
+      </div>
+    </section>
+    <section class="wrap section permissions" aria-labelledby="google-access">
+      <div><div class="section-label">Google authorization</div><h2 id="google-access">Limited access to Google Drive</h2></div>
+      <div><p>The utility requests the <code>drive.file</code> permission. This permits access to files the application creates or files explicitly authorized by the account holder; it does not request blanket permission to browse all existing Google Drive files.</p><p>Google Drive is used as an encrypted backup destination, not as the clinic's live patient database. Read how Google account information, backup archives, and credentials are handled in our <a href="/privacy.html">privacy policy</a>.</p></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-content"><div><strong>Suwasetha EMR Backup</strong><div class="muted">A private utility for Suwasetha Medical Centre, Sri Lanka.</div></div><div class="footer-links"><a href="/privacy.html">Privacy policy</a><a href="https://github.com/ramilwick/ramilwick.github.io/issues" rel="noopener noreferrer">Non-confidential questions</a></div></div><div class="wrap tiny">Please do not send patient records, passwords, access tokens, or encryption keys through public support channels.</div></footer>
+</body>
+</html>
