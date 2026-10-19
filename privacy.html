@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for the private Suwasetha EMR Backup Google Drive integration.">
+  <meta name="theme-color" content="#f7fafb">
+  <title>Privacy Policy | Suwasetha EMR Backup</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header"><div class="wrap nav"><a href="/" class="brand"><span class="brand-mark">+</span> Suwasetha <span class="brand-light">EMR Backup</span></a><nav aria-label="Main navigation"><a href="/">Overview</a><a class="current" href="/privacy.html">Privacy policy</a></nav></div></header>
+  <main class="wrap legal">
+    <div class="section-label">Privacy and transparency</div>
+    <h1>Privacy policy</h1>
+    <p class="legal-date">Last updated: 19 October 2026</p>
+    <p class="lead">This policy describes how the private <strong>Suwasetha EMR Backup</strong> utility accesses and uses the Google Drive account authorized by the clinic operator. It addresses this backup utility and is not a substitute for Suwasetha Medical Centre's separate patient privacy notices.</p>
+    <h2>1. Who operates this service</h2>
+    <p>Suwasetha EMR Backup is an owner-operated database backup utility for Suwasetha Medical Centre, Sri Lanka. It is intended for authorized clinic administrators, not for public patient access. The public website contains only information about the utility.</p>
+    <h2>2. Google Drive permissions requested</h2>
+    <p>The application requests Google's <code>https://www.googleapis.com/auth/drive.file</code> authorization scope, allowing it to create and manage files that the application creates or that the account holder explicitly authorizes. It does not request unrestricted access to all pre-existing Drive content. The account owner can review or revoke authorization in their Google Account settings.</p>
+    <h2>3. Data the utility accesses and generates</h2>
+    <ul>
+      <li><strong>Google account authorization:</strong> OAuth access/refresh token data needed to upload backup files; this is held in restricted private configuration used by the scheduled backup service, not published on this website.</li>
+      <li><strong>Google Drive file information:</strong> the authorized backup-folder identifier and the names, identifiers, sizes, and integrity checksums of backups the utility creates. This information is used to confirm transfers and support recovery.</li>
+      <li><strong>Encrypted backups:</strong> the clinic's PostgreSQL database may contain confidential patient, clinical, administrative, and billing information. The utility encrypts each export on the backup service before transmitting its encrypted contents to Google Drive.</li>
+      <li><strong>Operational logs:</strong> limited run-status and failure information may be retained by the backup infrastructure for troubleshooting. Database content and secret credentials should not be included in these logs.</li>
+    </ul>
+    <h2>4. How the data is used</h2>
+    <p>Google account authorization and Drive information are used solely to create, upload, verify, retrieve when necessary, and administer encrypted clinic database backups. The utility does not use Google user data for advertising, profiling, analytics marketing, or sale. It does not intentionally read unrelated Drive files or disclose Google account data to third-party advertisers.</p>
+    <h2>5. Storage, security, and service providers</h2>
+    <p>Database exports are encrypted with AES-256-GCM before upload. The encryption key is configured and retained separately from the Google Drive backup objects. During backup execution, a temporary database export may exist in the secure cloud job environment and is removed at completion. Google Drive stores the encrypted backup archives; Render hosts the scheduled backup job and clinic database. Both providers process data as needed to deliver their services. Encryption protects stored archive contents only while keys and credentials remain secure.</p>
+    <h2>6. Retention and deletion</h2>
+    <p>Encrypted backup files are retained in the operator's Google Drive until the operator deletes them under an applicable clinic retention and recovery policy. Automatic expiry or deletion is not currently implemented by this utility. The account owner may delete a backup from Drive, or revoke the application's access through Google Account permissions. Revocation prevents future authorized transfers but does not by itself remove previously created backup files. Retention of original clinical records is governed separately and is not changed by deleting a backup.</p>
+    <h2>7. Sharing and access</h2>
+    <p>The operator does not sell Google account data or intentionally share patient backups publicly. Access may be provided to essential infrastructure providers (Google and Render) solely for their respective storage and hosting functions, and to duly authorized clinic or recovery personnel as required for backup restoration or legal obligations. Backup folders should not be publicly shared.</p>
+    <h2>8. Account controls and questions</h2>
+    <p>The Google account owner can revoke the application's Google Drive permission at any time through <a href="https://myaccount.google.com/permissions" rel="noopener noreferrer">Google Account third-party access settings</a>. Doing so will stop unattended backup uploads until authorization is restored.</p>
+    <p>For non-confidential inquiries about this utility or this policy, contact the operator via the <a href="https://github.com/ramilwick/ramilwick.github.io/issues" rel="noopener noreferrer">public website support issues page</a>. <strong>Do not submit patient information, passwords, tokens, database files, or other sensitive material to a public issue.</strong> For any sensitive concern, use the clinic's existing private contact arrangements instead.</p>
+    <h2>9. Policy changes</h2>
+    <p>This policy may be updated to reflect changes in the backup utility, data handling, retention, or applicable requirements. The latest version will be published at this URL with an updated date.</p>
+    <div class="back"><a href="/">← Back to Suwasetha EMR Backup</a></div>
+  </main>
+  <footer><div class="wrap footer-content"><div><strong>Suwasetha EMR Backup</strong><div class="muted">A private utility for Suwasetha Medical Centre, Sri Lanka.</div></div><div class="footer-links"><a href="/">Homepage</a><a href="/privacy.html">Privacy policy</a></div></div><div class="wrap tiny">This policy concerns Google Drive backup operations; the clinical EMR has its own privacy and operational obligations.</div></footer>
+</body>
+</html>
